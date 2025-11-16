@@ -20,13 +20,13 @@ echo "✅ Environment file found"
 echo ""
 
 # Deploy contracts
-echo "📝 Deploying contracts to Polygon Mumbai..."
-npx hardhat run scripts/deploy.js --network polygonMumbai
+echo "📝 Deploying contracts to Polygon Amoy..."
+npx hardhat run scripts/deploy.js --network polygonAmoy
 
 if [ $? -ne 0 ]; then
     echo ""
     echo "❌ Deployment failed!"
-    echo "Make sure you have Mumbai MATIC in your wallet"
+    echo "Make sure you have Amoy MATIC in your wallet"
     echo "Get free testnet MATIC from: https://faucet.polygon.technology/"
     exit 1
 fi
@@ -37,7 +37,7 @@ echo ""
 
 # Transfer tokens to your address
 echo "💰 Transferring 10,000 STK tokens to your wallet..."
-npx hardhat run scripts/transfer-tokens.js --network polygonMumbai
+npx hardhat run scripts/transfer-tokens.js --network polygonAmoy
 
 echo ""
 echo "================================================"

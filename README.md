@@ -37,7 +37,7 @@ web3/
 
 - Node.js 18+ and npm
 - MetaMask or another Web3 wallet
-- Polygon Mumbai testnet MATIC (get from [faucet](https://faucet.polygon.technology/))
+- Polygon Amoy testnet MATIC (get from [faucet](https://faucet.polygon.technology/))
 
 ## Installation
 
@@ -61,7 +61,7 @@ cp .env.example .env
 
 # Edit .env and add:
 # - Your wallet private key
-# - Polygon Mumbai RPC URL (optional, uses public RPC by default)
+# - Polygon Amoy RPC URL (optional, uses public RPC by default)
 # - PolygonScan API key (optional, for contract verification)
 ```
 
@@ -93,16 +93,16 @@ npx hardhat compile
 
 ## Deployment
 
-### Deploy to Polygon Mumbai Testnet
+### Deploy to Polygon Amoy Testnet
 
 1. **Get Testnet MATIC**
-   - Visit [Polygon Mumbai Faucet](https://faucet.polygon.technology/)
+   - Visit [Polygon Amoy Faucet](https://faucet.polygon.technology/)
    - Enter your wallet address
    - Wait for testnet MATIC
 
 2. **Deploy Contracts**
    ```bash
-   npx hardhat run scripts/deploy.js --network polygonMumbai
+   npx hardhat run scripts/deploy.js --network polygonAmoy
    ```
 
 3. **Save Deployment Info**
@@ -111,8 +111,8 @@ npx hardhat compile
 
 4. **Verify Contracts (Optional)**
    ```bash
-   npx hardhat verify --network polygonMumbai STAKING_TOKEN_ADDRESS 1000000
-   npx hardhat verify --network polygonMumbai STAKING_REWARDS_ADDRESS STAKING_TOKEN_ADDRESS
+   npx hardhat verify --network polygonAmoy STAKING_TOKEN_ADDRESS 1000000
+   npx hardhat verify --network polygonAmoy STAKING_REWARDS_ADDRESS STAKING_TOKEN_ADDRESS
    ```
 
 ### Deploy Locally for Testing
@@ -163,13 +163,13 @@ Open [http://localhost:3000](http://localhost:3000)
    - Click "Connect Wallet" button
    - Select your wallet (MetaMask recommended)
    - Approve connection
-   - Switch to Polygon Mumbai network if prompted
+   - Switch to Polygon Amoy network if prompted
 
 2. **Get Test Tokens**
    - After deployment, the deployer has all tokens
    - Send some STK tokens to your test address using MetaMask or:
      ```bash
-     npx hardhat console --network polygonMumbai
+     npx hardhat console --network polygonAmoy
      ```
      ```javascript
      const token = await ethers.getContractAt("StakingToken", "TOKEN_ADDRESS");
@@ -240,7 +240,7 @@ Open [http://localhost:3000](http://localhost:3000)
 3. **Transactions Failing**
    - Ensure you have enough MATIC for gas
    - Check that you have STK tokens in your wallet
-   - Verify you're on Polygon Mumbai network
+   - Verify you're on Polygon Amoy network
    - Make sure contracts are deployed correctly
 
 4. **RainbowKit Not Showing**
@@ -249,11 +249,11 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ## Network Configuration
 
-### Polygon Mumbai Testnet
+### Polygon Amoy Testnet
 
-- **Chain ID**: 80001
+- **Chain ID**: 80002
 - **RPC URL**: https://rpc-mumbai.maticvigil.com
-- **Block Explorer**: https://mumbai.polygonscan.com
+- **Block Explorer**: https://amoy.polygonscan.com
 - **Faucet**: https://faucet.polygon.technology
 
 ### Adding to MetaMask
@@ -261,7 +261,7 @@ Open [http://localhost:3000](http://localhost:3000)
 1. Open MetaMask
 2. Click network dropdown
 3. Click "Add Network"
-4. Enter Mumbai testnet details above
+4. Enter Amoy testnet details above
 5. Save
 
 ## Gas Optimization
@@ -288,7 +288,7 @@ MIT
 For issues or questions:
 1. Check deployment.json for correct addresses
 2. Verify .env configuration
-3. Check Polygon Mumbai block explorer for transactions
+3. Check Polygon Amoy block explorer for transactions
 4. Review Hardhat and Next.js logs for errors
 
 ## Next Steps

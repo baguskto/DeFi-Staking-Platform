@@ -1,18 +1,16 @@
 # Quick Deployment Guide for 0xAE9466Fe4A2112a17a916A73e896B92cEcA3Fd93
 
-## Step 1: Get Mumbai Testnet MATIC (FREE)
+## Step 1: Get Amoy Testnet MATIC (FREE)
 
-1. **Visit the Mumbai Faucet**:
+1. **Visit the Amoy Faucet**:
    - Go to: https://faucet.polygon.technology/
    - Connect your MetaMask wallet
-   - Select "Mumbai" network
+   - Select "Amoy" network
    - Select "MATIC Token"
    - Click "Submit"
    - Wait 1-2 minutes to receive test MATIC
 
-2. **Alternative Faucets** (if first one doesn't work):
-   - https://mumbaifaucet.com/
-   - https://faucet.quicknode.com/polygon/mumbai
+2. **Note**: Polygon Amoy uses **POL** token for gas (not MATIC)
 
 ## Step 2: Get Your Private Key from MetaMask
 
@@ -36,7 +34,7 @@ echo "POLYGON_MUMBAI_RPC=https://rpc-mumbai.maticvigil.com" >> .env
 Or manually create `.env` file:
 ```
 PRIVATE_KEY=your_private_key_without_0x
-POLYGON_MUMBAI_RPC=https://rpc-mumbai.maticvigil.com
+POLYGON_AMOY_RPC=https://rpc-amoy.polygon.technology
 ```
 
 ## Step 4: Deploy Contracts
@@ -45,8 +43,8 @@ POLYGON_MUMBAI_RPC=https://rpc-mumbai.maticvigil.com
 # Make sure you're in the web3 directory
 cd /Users/baguskto/Downloads/Work/web3
 
-# Deploy to Mumbai testnet
-npx hardhat run scripts/deploy.js --network polygonMumbai
+# Deploy to Amoy testnet
+npx hardhat run scripts/deploy.js --network polygonAmoy
 ```
 
 You should see:
@@ -75,7 +73,7 @@ export const STAKING_REWARDS_ADDRESS = '0xYOUR_REWARDS_ADDRESS' as `0x${string}`
 You'll need some STK tokens to test. Run this script:
 
 ```bash
-npx hardhat console --network polygonMumbai
+npx hardhat console --network polygonAmoy
 ```
 
 Then in the console:
@@ -100,7 +98,7 @@ Open: http://localhost:3000
 1. **Connect Wallet**
    - Click "Connect Wallet"
    - Select MetaMask
-   - Make sure you're on Mumbai testnet
+   - Make sure you're on Amoy testnet
 
 2. **Check Balance**
    - You should see 10,000 STK in your wallet
@@ -127,15 +125,15 @@ Open: http://localhost:3000
 ## Troubleshooting
 
 ### "Insufficient funds for gas"
-- You need Mumbai MATIC from the faucet
+- You need Amoy MATIC from the faucet
 
 ### "Network not found"
-- Add Mumbai network to MetaMask:
-  - Network Name: Mumbai Testnet
-  - RPC URL: https://rpc-mumbai.maticvigil.com
-  - Chain ID: 80001
-  - Currency: MATIC
-  - Block Explorer: https://mumbai.polygonscan.com
+- Add Amoy network to MetaMask:
+  - Network Name: Polygon Amoy Testnet
+  - RPC URL: https://rpc-amoy.polygon.technology
+  - Chain ID: 80002
+  - Currency: POL
+  - Block Explorer: https://amoy.polygonscan.com
 
 ### "Cannot find module"
 - Run `npm install` in the root directory
@@ -143,14 +141,14 @@ Open: http://localhost:3000
 
 ### Contracts not showing data
 - Make sure you updated `frontend/app/constants.ts` with correct addresses
-- Check you're on Mumbai network in MetaMask
+- Check you're on Amoy network in MetaMask
 - Verify you have test tokens
 
 ## Quick Commands Reference
 
 ```bash
 # Deploy contracts
-npx hardhat run scripts/deploy.js --network polygonMumbai
+npx hardhat run scripts/deploy.js --network polygonAmoy
 
 # Run tests
 npx hardhat test
@@ -166,18 +164,19 @@ cat deployment.json
 Address: `0xAE9466Fe4A2112a17a916A73e896B92cEcA3Fd93`
 
 ## Network Info
-- **Network**: Polygon Mumbai Testnet
-- **Chain ID**: 80001
-- **RPC**: https://rpc-mumbai.maticvigil.com
-- **Explorer**: https://mumbai.polygonscan.com
+- **Network**: Polygon Amoy Testnet
+- **Chain ID**: 80002
+- **RPC**: https://rpc-amoy.polygon.technology
+- **Explorer**: https://amoy.polygonscan.com
+- **Gas Token**: POL (not MATIC)
 
 ## Support
 
 If you encounter issues:
 1. Check `deployment.json` for contract addresses
 2. Verify `.env` has your private key
-3. Ensure you have Mumbai MATIC
-4. Check MetaMask is on Mumbai network
+3. Ensure you have Amoy MATIC
+4. Check MetaMask is on Amoy network
 5. Look at browser console (F12) for errors
 
 ---
