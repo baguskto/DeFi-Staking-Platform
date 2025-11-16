@@ -2,6 +2,15 @@
 
 A full-stack decentralized finance (DeFi) staking platform built with Solidity, Hardhat, Next.js, and RainbowKit. Users can stake ERC20 tokens and earn rewards at a 10% annual percentage rate (APR).
 
+![DeFi Staking Platform](docs/images/screenshot.png)
+
+## 🚀 Live Demo
+
+**Deployed on Polygon Amoy Testnet:**
+- **StakingToken Contract**: [0x199bE779cA804624E7826bcD5ec69F3Fd29caD44](https://amoy.polygonscan.com/address/0x199bE779cA804624E7826bcD5ec69F3Fd29caD44)
+- **StakingRewards Contract**: [0x817e3d5184852b4B801C06ABc55B325de4334a41](https://amoy.polygonscan.com/address/0x817e3d5184852b4B801C06ABc55B325de4334a41)
+- **Network**: Polygon Amoy (Chain ID: 80002)
+
 ## Features
 
 - **Smart Contracts**
